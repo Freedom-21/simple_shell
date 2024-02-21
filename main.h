@@ -11,5 +11,9 @@
 
 extern char **environ;
 
+int _strlen(const char *s);
+char *find_cmd_in_path(char *cmd);
+char *_strdup(const char *s);
+
 #endif /* MAIN_H */
 
