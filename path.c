@@ -2,7 +2,7 @@
 
 /**
  * find_cmd_in_path - a function to find command in PATH
- * @cmd: the command 
+ * @cmd: an input command to the shell
  * Return: the full path if it found or NULL is it fails to find
  */
 
