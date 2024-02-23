@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_env - a funtion that prints all the available envs in PATH 
+ * print_env - a funtion that prints all the available envs in PATH
  * Return: print everything in PATH
  */
 

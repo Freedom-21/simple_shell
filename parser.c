@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * parse_input - 
+ * parse_input - a funtion that parses an input
  * @line: an input stream of charcters
  * Return: argument vector on success or NULL in failure
  */
@@ -12,7 +12,7 @@ char **parse_input(char *line)
 	int i = 0;
 
 	argv = malloc(sizeof(char *) * MAX_ARGS);
-	
+
 	if (!argv)
 	{
 		perror("Allocation error");

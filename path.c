@@ -9,6 +9,7 @@
 char *find_cmd_in_path(char *cmd)
 {
 	char *path, *path_copy, *token, *full_path;
+
 	path = getenv("PATH");
 	path_copy = _strdup(path);
 	token = strtok(path_copy, ":");
@@ -27,7 +28,7 @@ char *find_cmd_in_path(char *cmd)
 	{
 		full_path = malloc(_strlen(token) + _strlen(cmd) + 2);
 		sprintf(full_path, "%s/%s", token, cmd);
-		
+
 		if (access(full_path, X_OK) == 0)
 		{
 			free(path_copy);
