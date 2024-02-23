@@ -5,30 +5,30 @@
  * Return: 0 for success
  */
 
-int main(void) 
+int main(void)
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
 	char **argv;
-	
-	while (1) 
+
+	while (1)
 	{
 		printf(":$ ");
 		nread = getline(&line, &len, stdin);
-		
+
 		if (nread == -1)
 			break;
-		
+
 		line[nread - 1] = '\0';
 		argv = parse_input(line);
-		
+
 		if (argv == NULL)
 			continue;
-		
+
 		if (_strcmp(argv[0], "exit") == 0)
 			handle_exit();
-		
+
 		if (_strcmp(argv[0], "env") == 0)
 		{
 			print_env();
