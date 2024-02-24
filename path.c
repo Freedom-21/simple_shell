@@ -35,7 +35,7 @@ char *find_cmd_in_path(char *cmd)
 			return (NULL);
 		}
 		strcpy(full_path, token);
-		strcat(fullpath, "/");
+		strcat(full_path, "/");
 		strcat(full_path, cmd);
 
 		if (access(full_path, X_OK) == 0)
