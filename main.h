@@ -20,6 +20,8 @@ char **parse_input(char *line);
 ssize_t read_input(char **line, size_t *len);
 int _strcmp(char *s1, char *s2);
 void print_env(void);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 
 #endif /* MAIN_H */
 
