@@ -27,7 +27,16 @@ char *find_cmd_in_path(char *cmd)
 	while (token != NULL)
 	{
 		full_path = malloc(_strlen(token) + _strlen(cmd) + 2);
-		sprintf(full_path, "%s/%s", token, cmd);
+
+		if (full_path == NULL)
+		{
+			perror("Allocation error");
+			free(path_copy);
+			return (NULL);
+		}
+		strcpy(full_path, token);
+		strcat(fullpath, "/");
+		strcat(full_path, cmd);
 
 		if (access(full_path, X_OK) == 0)
 		{
