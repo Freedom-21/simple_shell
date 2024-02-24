@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * execute_cmd - a function that creates processes and execute them
- * @argv: a pointer to an array of argument vectors
- * Return: execute process on success or exit with error if not
+ * execute_cmd - a function that execute a command by creating a child process
+ * @argv: an array of strings of the command and its arguments
+ * Return: None
  */
 
 void execute_cmd(char **argv)
 {
 	pid_t child_pid;
 	char *cmd_path;
+	int exec_return;
 
 	child_pid = fork();
 
@@ -19,7 +20,8 @@ void execute_cmd(char **argv)
 
 		if (cmd_path != NULL)
 		{
-			if (execve(cmd_path, argv, environ) == -1)
+			exec_return = execve(cmd_path, argv, environ);
+			if (exec_return == -1)
 			{
 				perror("./shell");
 				free(cmd_path);
