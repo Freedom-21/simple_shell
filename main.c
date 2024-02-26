@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - main function to execute functions
+ * main - entry point to shell program
  * Return: 0 for success
  */
 
@@ -27,7 +27,7 @@ int main(void)
 			continue;
 
 		if (_strcmp(argv[0], "exit") == 0)
-			handle_exit();
+			exit(0);
 
 		if (_strcmp(argv[0], "env") == 0)
 		{
