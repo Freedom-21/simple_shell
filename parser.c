@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * parse_input - a funtion that takes a pointer to input and 
+ * parse_input - a funtion that takes a pointer to input and
  *	returns a pointer to a pointer to a character
  * @line: an input stream of charcters
  * Return: argument vector on success or NULL in failure
