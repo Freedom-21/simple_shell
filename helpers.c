@@ -58,7 +58,7 @@ char *_strcat(char *dest, char *src)
 {
 	int i, j;
 
-	for (i = 0, dest[i] != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++)
 		;
 	for (j = 0; src[j] != '\0'; j++)
 	{
@@ -81,7 +81,7 @@ char *_strdup(const char *s)
 	char *dup;
 
 	len = _strlen(s) + 1;
-	dup - malloc(len * sizeof(char));
+	dup = malloc(len * sizeof(char));
 
 	if (dup == NULL)
 		return (NULL);
