@@ -7,10 +7,9 @@
 
 int main(void)
 {
-	char *line = NULL;
-	size_t len = 0;
+	char **argv,  *line = NULL;
 	ssize_t nread;
-	char **argv;
+	size_t len = 0;
 
 	if (isatty(STDIN_FILENO))
 	{
@@ -18,20 +17,15 @@ int main(void)
 		{
 			printf("$ ");
 			nread = getline(&line, &len, stdin);
-
 			if (nread == -1)
 				break;
-
 			line[nread - 1] = '\0';
 			argv = parse_input(line);
-
 			if (argv == NULL)
 				continue;
-
 			if (_strcmp(argv[0], "exit") == 0)
 			{
-				free(argv);
-				break;
+				handle_exit();
 			}
 			if (_strcmp(argv[0], "env") == 0)
 			{
